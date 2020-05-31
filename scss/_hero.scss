@@ -1,0 +1,54 @@
+@import 'variables';
+.hero {
+	padding-top: 120px;
+
+	// mixin to automate process
+	@include breakpoint(medium) {
+		padding-top: 120px;
+	}
+
+	// if font-size is 1rem, doesnt need declaring
+
+	&__logo {
+		margin-bottom: 70px;
+	}
+
+	h1 {
+		@include breakpoint(medium) {
+			// when in desktop/tablet, no line breaker
+			br {
+				display: none;
+			}
+		}
+	}
+
+	&__cta {
+		// buttons for mobile works like flexbox
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		// for tablets or higher, works like block
+		@include breakpoint(medium) {
+			display: block;
+		}
+
+		button:first-child {
+			// for mobile, margin bottom of 20px
+			margin-bottom: 20px;
+			@include breakpoint(medium) {
+				// for tablets or higher, margin bottom is zero
+				margin-bottom: 0px;
+				margin-right: 16px;
+			}
+		}
+
+		button {
+			font-size: 1rem;
+
+			@include breakpoint(medium) {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}

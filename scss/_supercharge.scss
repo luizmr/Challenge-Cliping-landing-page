@@ -1,0 +1,49 @@
+@import 'variables';
+
+.content {
+	margin-bottom: 20px;
+}
+
+.supercharge {
+	.content {
+		margin-bottom: 30px;
+
+		@include breakpoint(large) {
+			margin-bottom: 0px;
+		}
+	}
+
+	&__columns {
+		@include breakpoint(large) {
+			// row by default
+			// display: flex;
+
+			// grid
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 20px;
+		}
+	}
+
+	&__column {
+		margin-bottom: 60px;
+		@include breakpoint(large) {
+			// all same size
+			// flex: 1;
+
+			// no need of grid in it
+		}
+	}
+
+	&__icons {
+		height: 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+
+		@include breakpoint(large) {
+			margin-bottom: 36px;
+		}
+	}
+}

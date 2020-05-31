@@ -1,0 +1,37 @@
+// Font
+$font-primary: 'Bai Jamjuree', sans-serif;
+
+// Colors
+$cyan: hsl(171, 66%, 44%);
+$purple: hsl(233, 100%, 69%);
+$darkGray: hsl(210, 10, 33%);
+$lightGray: hsl(201, 11%, 66%);
+$xlightGray: #f5f6f8;
+
+// Media Queries
+$breakpoints: (
+	small: 699px,
+	medium: 700px,
+	large: 1000px,
+	xlarge: 1300px,
+);
+
+@mixin breakpoint($size) {
+	// get the size value
+	$breakpoint-value: map-get($breakpoints, $size);
+
+	// write the media query
+	@media screen and (min-width: $breakpoint-value) {
+		@content;
+	}
+}
+
+@mixin breakpoint-less($size) {
+	// get the size value
+	$breakpoint-value: map-get($breakpoints, $size);
+
+	// write the media query
+	@media screen and (max-width: $breakpoint-value) {
+		@content;
+	}
+}

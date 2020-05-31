@@ -1,0 +1,11 @@
+@import 'variables';
+
+.access {
+	&__img {
+		max-width: 110%;
+		margin: 0;
+
+		@include breakpoint(large) {
+		}
+	}
+}

@@ -1,0 +1,17 @@
+.logos {
+	display: grid;
+	gap: 70px;
+
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	justify-items: center;
+	margin: auto;
+
+	@include breakpoint(large) {
+		gap: 20px;
+		max-width: 1200px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		justify-items: center;
+		margin: auto;
+	}
+}

@@ -1,0 +1,53 @@
+@import 'variables';
+
+.download {
+	h2 {
+		margin-top: 50px;
+		@include breakpoint(medium) {
+			margin-top: 20px;
+			margin-bottom: 20px;
+			// when in desktop/tablet, no line breaker
+			br {
+				display: none;
+			}
+		}
+	}
+
+	p {
+		margin-bottom: 50px;
+
+		@include breakpoint(large) {
+			// margin-bottom: 0px;
+		}
+	}
+
+	&__cta {
+		// buttons for mobile works like flexbox
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		// for tablets or higher, works like block
+		@include breakpoint(medium) {
+			display: block;
+		}
+
+		button:first-child {
+			// for mobile, margin bottom of 20px
+			margin-bottom: 20px;
+			@include breakpoint(medium) {
+				// for tablets or higher, margin bottom is zero
+				margin-bottom: 0px;
+				margin-right: 16px;
+			}
+		}
+
+		button {
+			font-size: 1rem;
+
+			@include breakpoint(medium) {
+				font-size: 0.875rem;
+			}
+		}
+	}
+}

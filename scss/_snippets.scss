@@ -1,0 +1,52 @@
+@import 'variables';
+.snippets {
+	&__content {
+		position: relative;
+		width: 100%;
+
+		@include breakpoint(large) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__image,
+	&__features {
+		@include breakpoint(large) {
+			flex: 1;
+		}
+	}
+
+	&__image {
+		margin-bottom: 60px;
+
+		@include breakpoint(large) {
+			margin-bottom: 0px;
+		}
+
+		img {
+			width: 100%;
+			max-width: 500px;
+			@include breakpoint(large) {
+				transform: translateX(-55px);
+				max-width: none;
+			}
+		}
+	}
+
+	&__features {
+		// for mobile
+		text-align: center;
+
+		@include breakpoint(large) {
+			// for desktop
+			display: block;
+			margin-left: 55px;
+			text-align: left;
+			p {
+				max-width: 340px;
+				margin-left: 0;
+			}
+		}
+	}
+}
